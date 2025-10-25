@@ -1,0 +1,313 @@
+/* === Global Styles === */
+body {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #f0f9ff 100%);
+  color: #1e293b;
+  font-family: "Inter", sans-serif;
+}
+
+/* === Navbar === */
+nav {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  border-bottom: 2px solid #000000;
+  box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4), 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+nav:hover {
+  box-shadow: 0 6px 25px rgba(30, 64, 175, 0.6), 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+nav span, nav a, nav button {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  border: 1px solid #000000;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a:hover {
+  color: #93c5fd !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* === Section Containers === */
+.section-container {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+  border: 2px solid #bfdbfe;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(147, 197, 253, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.section-container:hover::before {
+  left: 100%;
+}
+
+.section-container:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(96, 165, 250, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.8);
+  border-color: #3b82f6;
+}
+
+/* === Spacing Animations === */
+.space-y-4 > * + *, .space-y-6 > * + * {
+  margin-top: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.space-y-4 > *:hover, .space-y-6 > *:hover {
+  transform: translateX(5px);
+}
+
+/* === Project Cards === */
+.project-card {
+  background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  border-radius: 0 0 12px 12px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::after {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  transform: translateY(-3px) rotate(1deg);
+  box-shadow: 0 8px 25px rgba(147, 197, 253, 0.25);
+}
+
+.project-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* === Calendar Tasks === */
+.calendar-task {
+  background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 50px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.calendar-task:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 20px rgba(147, 197, 253, 0.3);
+  border-radius: 20px;
+  border-color: #3b82f6;
+}
+
+/* === Report Cards === */
+.report-card {
+  background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(147, 197, 253, 0.25);
+}
+
+.report-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* === Progress Bar === */
+.progress-bar {
+  background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+  border-radius: 9999px;
+  height: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+  height: 100%;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.progress-bar-fill:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+}
+
+/* === Buttons === */
+button, .btn {
+  position: relative;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.bg-indigo-600, #newTaskBtn, #applyFiltersBtn {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+}
+
+.bg-indigo-600:hover, #newTaskBtn:hover, #applyFiltersBtn:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+}
+
+/* === Task Cards === */
+.task-card {
+  background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px) rotate(0.5deg);
+  box-shadow: 0 10px 30px rgba(147, 197, 253, 0.3);
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  border-top: 2px solid #000000;
+  box-shadow: 0 -4px 20px rgba(30, 64, 175, 0.4);
+}
+
+footer p {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  .section-container {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  .project-card, .calendar-task, .report-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  nav {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 2.5rem;
+  }
+  .project-card, .report-card {
+    padding: 1.5rem;
+  }
+}
+
+/* === Text Colors === */
+.text-green-600 {
+  font-weight: 700;
+  color: #16a34a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-red-600 {
+  font-weight: 700;
+  color: #dc2626 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* === Misc === */
+* {
+  transition: all 0.2s ease;
+}
+
+input, select, textarea {
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+[data-feather] {
+  transition: transform 0.2s ease;
+}
+
+[data-feather]:hover {
+  transform: scale(1.2);
+}
